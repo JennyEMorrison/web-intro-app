@@ -2,7 +2,8 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 get '/' do
-  "Hello, not a secret"
+  @random_name = ["Amigo", "Misty", "Almond"].sample 
+  erb(:index)
 end
 
 get '/secret' do
