@@ -10,14 +10,18 @@ get '/secret' do
   "secret message"
 end
 
-get '/ramdom-cat' do
+get '/random-cat' do
 "<div style='border: 3px dashed red'>
   <img src='http://placekitten.com/500/500'>
 </div>"
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
   erb :index
+end
+
+get '/cat-form' do
+  erb :cat_form
 end
